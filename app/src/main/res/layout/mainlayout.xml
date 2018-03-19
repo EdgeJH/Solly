@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whtie">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/whtie">
+
+            <com.artbating.solly.LetterSpacingTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="SollyMusic"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:id="@+id/appname" />
+
+            <RelativeLayout
+                android:id="@+id/nfctag"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/nfcicon" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/grey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_below="@+id/toolbar">
+
+            <ImageView
+                android:id="@+id/empty2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                android:adjustViewBounds="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty2"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:text="음원을 추가해 주세요"
+                android:textColor="#dadbdb"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/marketitem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginBottom="55dp"
+            android:clipToPadding="false"
+            android:padding="@dimen/item_offset" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:clipToPadding="true"
+        app:behavior_peekHeight="55dp"
+        app:layout_behavior="com.artbating.solly.WABottomSheetBehavior">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/whtie"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/bottomtool"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true">
+
+                    <RelativeLayout
+                        android:id="@+id/hide"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/hide" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/menu2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="15dp"
+                        android:padding="3dp"
+                        android:src="@drawable/menu" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/frame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bottomtool">
+
+                    <com.artbating.solly.SquareRelativeLayout
+                        android:id="@+id/squarecover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/coverpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:id="@+id/lyricback"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignBottom="@+id/coverimage"
+                            android:layout_centerHorizontal="true"
+                            android:background="#ddffffff"
+                            android:visibility="gone" />
+
+
+                        <com.artbating.solly.LyricView
+                            android:id="@+id/custom_lyric_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/coverimage"
+                            android:layout_centerHorizontal="true"
+                            android:background="#ddffffff"
+                            android:visibility="gone"
+                            app:fadeInFadeOut="true"
+                            app:highlightColor="#000000"
+                            app:maxLength="360dp"
+                            app:textColor="#eeffffff" />
+
+                        <TextView
+                            android:id="@+id/lyricvisiblebt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_gravity="center"
+                            android:background="#30000000"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/whtie"
+                            android:paddingRight="10dp"
+                            android:paddingTop="5dp"
+                            android:layout_margin="20dp"
+                            android:text="가사" />
+                    </com.artbating.solly.SquareRelativeLayout>
+
+                </RelativeLayout>
+                <SeekBar
+                    android:id="@+id/seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_above="@+id/g3"
+                    android:maxHeight="10dp"
+                    android:minHeight="10dp"
+                    android:paddingEnd="0dp"
+                    android:paddingStart="0dp"
+                    android:paddingTop="13.5dp"
+                    android:paddingBottom="13.5dp"
+                    android:progress="50"
+                    android:progressDrawable="@drawable/customseekbar"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/thumb" />
+
+                <View
+                    android:id="@+id/g2"
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp"
+                    android:layout_below="@+id/frame" />
+
+                <View
+                    android:id="@+id/g3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_below="@+id/g2" />
+
+                <RelativeLayout
+                    android:id="@+id/timetext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/frame"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/mediamaxtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="end"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/mediacurrnettime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:gravity="start"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="10dp" />
+
+                </RelativeLayout>
+
+
+                <include
+                    android:id="@+id/sub"
+                    layout="@layout/titlelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/timetext"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.001dp"
+                    android:background="@color/whtie"
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/g1"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/g1"
+                    android:layout_below="@+id/sub">
+
+                    <ImageView
+                        android:id="@+id/playbt"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/playbt" />
+
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toStartOf="@+id/playbt"
+                        android:id="@+id/reverse"
+                        android:layout_height="40dp">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerInParent="true"
+                            android:rotation="180"
+                            android:src="@drawable/forward" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="15dp"
+                        android:id="@+id/shuffleclick"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@id/reverse">
+                        <ImageView
+                            android:id="@+id/shuffle"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/shufflebt" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@+id/playbt"
+                        android:id="@+id/forward"
+                        android:layout_height="40dp">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/forward" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="15dp"
+                        android:id="@+id/loopingclick"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/forward">
+                        <ImageView
+                            android:id="@+id/looping"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/replybt" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/topframe"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/whtie">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                            <ImageView
+                                android:id="@+id/topcover"
+                                android:layout_width="54dp"
+                                android:layout_height="54dp"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentStart="true" />
+
+                            <RelativeLayout
+                                android:id="@+id/content"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_toEndOf="@+id/topcover"
+                                android:layout_toStartOf="@+id/playstoptop">
+
+                                <RelativeLayout
+                                    android:id="@+id/topclick"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true">
+
+                                    <TextView
+                                        android:id="@+id/topartist"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="10dp"
+                                        android:ellipsize="end"
+                                        android:singleLine="true"
+                                        android:text="solly"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="13dp" />
+
+                                    <TextView
+                                        android:id="@+id/topsong"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_below="@+id/topartist"
+                                        android:layout_marginStart="10dp"
+                                        android:ellipsize="end"
+                                        android:singleLine="true"
+                                        android:text="solly"
+                                        android:textColor="@color/grey"
+                                        android:textSize="13dp" />
+
+                                </RelativeLayout>
+                            </RelativeLayout>
+
+
+                            <ImageView
+                                android:id="@+id/playstoptop"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:layout_toStartOf="@+id/forwardtop"
+                                android:src="@drawable/playbt" />
+
+                            <ImageView
+                                android:id="@+id/forwardtop"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="20dp"
+                                android:layout_toStartOf="@+id/menu"
+                                android:src="@drawable/forward" />
+
+                            <ImageView
+                                android:id="@+id/menu"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="15dp"
+                                android:padding="3dp"
+                                android:src="@drawable/menu" />
+                            <SeekBar
+                                android:id="@+id/topseek"
+                                android:layout_alignParentTop="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="1.5dp"
+                                android:minHeight="10dp"
+                                android:maxHeight="10dp"
+                                android:paddingEnd="0dp"
+                                android:paddingStart="0dp"
+                                android:progress="50"
+                                android:splitTrack="false"
+                                android:thumb="@drawable/thumb"
+                                android:progressDrawable="@drawable/customseekbartop"/>
+
+                    </RelativeLayout>
+                </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

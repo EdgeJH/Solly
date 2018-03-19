@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whtie"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/toolbar"
+        android:layout_alignParentTop="true">
+        <com.artbating.solly.LetterSpacingTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/cancel"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/cancel"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomargin">
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/status"
+                android:layout_centerInParent="true">
+                <ImageView
+                    android:id="@+id/signal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+                <com.artbating.solly.VerticalProgressBar
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/vertical" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/status"
+                android:id="@+id/g2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:text="기기를 앨범 가까이 대어 주세요"
+                android:textColor="#000000"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/g2"
+                android:id="@+id/g3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="NFC를 기본 모드로 설정해주세요\n거리가 멀면 인식이 어려울 수 있습니다"
+                android:textAlignment="center"
+                android:textSize="16dp"
+                android:lineSpacingExtra="5dp"
+                android:textColor="@color/grey" />
+        </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottomargin"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/complete"
+        android:layout_below="@+id/toolbar"
+        android:visibility="gone"
+        android:background="@color/whtie"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

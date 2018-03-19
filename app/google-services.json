@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "934841144253",
+    "firebase_url": "https://solly-b6b12.firebaseio.com",
+    "project_id": "solly-b6b12",
+    "storage_bucket": "solly-b6b12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934841144253:android:f2bc689bfeb517f4",
+        "android_client_info": {
+          "package_name": "com.artbating.solly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934841144253-pd1dlk4nq6q4nun53rcg4tkd6comg314.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.artbating.solly",
+            "certificate_hash": "de4f1c7679358a1bacdb45ec2e869c4a481c6e2c"
+          }
+        },
+        {
+          "client_id": "934841144253-c2o3r9sbluf8o47cu2s4juq35e2o3v15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcCW8UPP0UwuOXlaNPlFoGiyhdg6ul2Dc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934841144253-c2o3r9sbluf8o47cu2s4juq35e2o3v15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
